@@ -42,8 +42,8 @@ ARG USER_ID=1000
 ARG GROUP_ID=1000
 
 # Creates sim user and add to sudoers file
-RUN groupadd -g $(GROUP_ID) sim && \
-    useradd -m -l -u $(USER_ID) -g sim sim && \
+RUN groupadd -g 1000 sim && \
+    useradd -m -l -u 1000 -g sim sim && \
     echo "sim:sim" | chpasswd && adduser sim sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
